@@ -1,0 +1,167 @@
+<button
+    class="card"
+    onclick='openInfoModal(
+        "Perinatal Substance Use",
+        "Support for a healthy pregnancy and baby starts with compassion, not judgment.",
+        [
+            {
+                type:"hero",
+                icon:"🤱",
+                title:"Why It Matters",
+                text:"Substance use during pregnancy can affect both mother and baby. With proper care, treatment, and support, families can achieve healthy outcomes."
+            },
+
+            {
+                type:"alert",
+                text:"Stigma often prevents women from seeking help — we are here to support you."
+            },
+
+            {
+                type:"section",
+                title:"Potential Risks",
+                items:[
+
+                    {
+                        type:"subsection",
+                        title:"For The Baby",
+                        icon:"👶",
+                        bullets:[
+                            "Preterm birth and low birth weight",
+                            "Neonatal abstinence syndrome (NAS)",
+                            "Developmental delays"
+                        ]
+                    },
+
+                    {
+                        type:"subsection",
+                        title:"For The Mother",
+                        icon:"🩺",
+                        bullets:[
+                            "High blood pressure and preeclampsia",
+                            "Infections including HIV and hepatitis",
+                            "Mental health challenges"
+                        ]
+                    }
+
+                ]
+            },
+
+            {
+                type:"section",
+                title:"Get Support — No Judgment",
+                items:[
+
+                    {
+                        type:"contact",
+                        icon:"🏥",
+                        label:"Project RESPECT — Women & Infants Hospital",
+                        phone:"401-274-1122",
+                        href:"tel:4012741122",
+                        website:"https://www.womenandinfants.org/"
+                    },
+
+                    {
+                        type:"contact",
+                        icon:"💜",
+                        label:"RI Parent Support Network",
+                        phone:"401-467-6855",
+                        href:"tel:4014676855",
+                        website:"https://riparentinformationnetwork.org/"
+                    },
+
+                    {
+                        type:"contact",
+                        icon:"☎️",
+                        label:"Substance Use Helpline For Pregnant Women",
+                        phone:"1-800-662-4357",
+                        href:"tel:18006624357",
+                        website:"https://www.samhsa.gov/find-help"
+                    }
+
+                ]
+            },
+
+            {
+                type:"section",
+                title:"Tips For A Healthy Pregnancy",
+                items:[
+
+                    {
+                        type:"tip",
+                        icon:"🗓️",
+                        text:"Early prenatal care"
+                    },
+
+                    {
+                        type:"tip",
+                        icon:"💊",
+                        text:"Medication-assisted treatment (MAT) is safe"
+                    },
+
+                    {
+                        type:"tip",
+                        icon:"👩‍⚕️",
+                        text:"Attend all pediatric appointments"
+                    },
+
+                    {
+                        type:"tip",
+                        icon:"🍼",
+                        text:"Breastfeeding support if appropriate"
+                    }
+
+                ]
+            },
+
+            {
+                type:"quote",
+                text:"Asking for help is a sign of strength."
+            }
+        ]
+    )'
+>
+
+    <div class="card-top">
+
+        <div class="icon">
+            ◈
+        </div>
+
+        <div class="arrow">
+            ›
+        </div>
+
+    </div>
+
+    <div class="card-content">
+
+        <h2>
+            Perinatal Substance Use
+        </h2>
+
+        <p>
+            Pregnancy support,
+            maternal health resources,
+            recovery guidance,
+            and compassionate treatment support.
+
+            <button
+                type="button"
+                class="audio-icon"
+                data-audio-id="cardPerinatal"
+                onclick="
+                    event.stopPropagation();
+
+                    if(window.playAudioById){
+                        window.playAudioById('cardPerinatal');
+                    }
+                "
+                aria-label="Play audio"
+            >
+                🔉
+            </button>
+        </p>
+
+    </div>
+
+</button>

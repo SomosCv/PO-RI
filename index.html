@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+    name="description"
+    content="Prevent Overdose Rhode Island - Harm reduction resources, overdose prevention tools, crisis support, recovery guidance, and emergency services."
+>
+<meta
+    name="keywords"
+    content="Prevent Overdose Rhode Island, harm reduction, overdose prevention, crisis support, recovery guidance, emergency services, naloxone, fentanyl test strips, peer support, mental health resources"
+>
+<meta name="author" content="Prevent Overdose RI Team">
+<meta name="theme-color" content="#041b46">
+
+<link
+    rel="icon"
+    href="pori-dark-bg.png"
+    type="image/x-icon"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="pori-dark-bg.png"
+>
+
+<link
+    rel="manifest"
+    href="manifest.json"
+>
+
+<link
+    rel="stylesheet"
+    href="styles.css"
+>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Prevent Overdose RI
+</title>
+
+</head>
+
+<body>
+
+<div
+    id="installPill"
+    style="
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 999999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: rgba(4, 27, 70, 0.96);
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1px solid rgba(255,255,255,0.12);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    "
+>
+    ⬇ Install
+</div>
+
+<div
+    id="installModal"
+    style="
+        position: fixed;
+        inset: 0;
+        z-index: 9999999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: rgba(0,0,0,0.75);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    "
+>
+
+    <div
+        style="
+            width: 100%;
+            max-width: 560px;
+            background: #041b46;
+            border-radius: 28px;
+            padding: 26px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        "
+    >
+
+        <button
+            id="closeInstallModal"
+            style="
+                position: absolute;
+                top: 14px;
+                right: 14px;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                border: none;
+                background: rgba(255,255,255,0.08);
+                color: white;
+                cursor: pointer;
+                font-size: 18px;
+            "
+        >
+            ✕
+        </button>
+
+        <div
+            style="
+                font-size: 30px;
+                font-weight: 800;
+                margin-bottom: 12px;
+            "
+        >
+            Install Prevent Overdose RI
+        </div>
+
+        <div
+            style="
+                opacity: 0.82;
+                line-height: 1.7;
+                font-size: 15px;
+                margin-bottom: 24px;
+            "
+        >
+            Add this app to your home screen for faster access,
+            offline support,
+            and a native app experience.
+        </div>
+
+        <div
+            style="
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            "
+        >
+
+            <div
+                style="
+                    background: rgba(255,255,255,0.06);
+                    border-radius: 20px;
+                    padding: 18px;
+                    border: 1px solid rgba(255,255,255,0.08);
+                "
+            >
+
+                <div
+                    style="
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                    "
+                >
+                    📱 iPhone / iPad
+                </div>
+
+                <div
+                    style="
+                        font-size: 14px;
+                        line-height: 1.8;
+                        opacity: 0.9;
+                    "
+                >
+                    1. Open this site in Safari.<br>
+                    2. Tap the Share button.<br>
+                    3. Scroll down and tap <strong>Add to Home Screen</strong>.<br>
+                    4. Tap <strong>Add</strong>.
+                </div>
+
+            </div>
+
+            <div
+                style="
+                    background: rgba(255,255,255,0.06);
+                    border-radius: 20px;
+                    padding: 18px;
+                    border: 1px solid rgba(255,255,255,0.08);
+                "
+            >
+
+                <div
+                    style="
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                    "
+                >
+                    🤖 Android
+                </div>
+
+                <div
+                    style="
+                        font-size: 14px;
+                        line-height: 1.8;
+                        opacity: 0.9;
+                    "
+                >
+                    1. Tap the browser menu (⋮).<br>
+                    2. Tap <strong>Install App</strong> or <strong>Add to Home screen</strong>.<br>
+                    3. Confirm installation.
+                </div>
+
+            </div>
+
+            <div
+                style="
+                    background: rgba(255,255,255,0.06);
+                    border-radius: 20px;
+                    padding: 18px;
+                    border: 1px solid rgba(255,255,255,0.08);
+                "
+            >
+
+                <div
+                    style="
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                    "
+                >
+                    💻 Desktop
+                </div>
+
+                <div
+                    style="
+                        font-size: 14px;
+                        line-height: 1.8;
+                        opacity: 0.9;
+                    "
+                >
+                    1. Look for the install icon in your browser address bar.<br>
+                    2. Click <strong>Install</strong>.<br>
+                    3. Launch the app from your desktop or applications menu.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="background"></div>
+
+<div class="app">
+
+    <header class="header">
+
+        <img
+            src="pori-no-bg.png"
+            alt="Prevent Overdose RI"
+            class="logo"
+            id="logo"
+        >
+
+    </header>
+
+    <section class="hero">
+
+        <h1 data-i18n="heroTitle">
+            Prevent Overdose Rhode Island
+        </h1>
+
+        <p data-i18n="heroText">
+            Harm reduction resources,
+            overdose prevention tools,
+            crisis support,
+            recovery guidance,
+            and emergency services.
+        </p>
+
+    </section>
+
+    <main
+        class="grid"
+        id="cardsGrid"
+    >
+
+    </main>
+
+    <footer class="footer">
+
+        <button
+            class="footer-item"
+            id="languageButton"
+        >
+
+            <div class="footer-icon">
+                ↹
+            </div>
+
+            <div
+                class="footer-label"
+                data-i18n="language"
+            >
+                Language
+            </div>
+
+        </button>
+
+        <button
+            class="footer-item"
+            id="themeButton"
+        >
+
+            <div class="footer-icon">
+                ☼
+            </div>
+
+            <div
+                class="footer-label"
+                data-i18n="theme"
+            >
+                Theme
+            </div>
+
+        </button>
+
+        <button
+            class="footer-item"
+            id="fontButton"
+        >
+
+            <div class="footer-icon">
+                Aā
+            </div>
+
+            <div
+                class="footer-label"
+                data-i18n="textSize"
+            >
+                Text Size
+            </div>
+
+        </button>
+
+        <button
+            class="footer-item"
+            id="menuButton"
+        >
+
+            <div class="footer-icon">
+                ⋯
+            </div>
+
+            <div
+                class="footer-label"
+                data-i18n="more"
+            >
+                More
+            </div>
+
+        </button>
+
+    </footer>
+
+</div>
+
+<div
+    class="modal"
+    id="emergencyModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title-wrap">
+
+                <div
+                    class="emergency-badge"
+                    data-i18n="emergencySupport"
+                >
+                    EMERGENCY SUPPORT
+                </div>
+
+                <h2 data-i18n="getHelpNow">
+                    Get Help Now
+                </h2>
+
+                <p data-i18n="getHelpNowText">
+                    Fast access to emergency contacts,
+                    crisis support,
+                    overdose response,
+                    and immediate assistance services.
+                </p>
+
+                <span
+                    class="audio-icon"
+                    data-audio-id="modalEmergency"
+                >
+                    🔉
+                </span>
+
+            </div>
+
+            <button
+                class="close-btn"
+                data-close-modal="emergencyModal"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <a
+                href="tel:911"
+                class="emergency-action emergency-call"
+            >
+
+                <div class="emergency-action-top">
+
+                    <div class="emergency-action-icon">
+                        ✚
+                    </div>
+
+                    <div class="emergency-action-arrow">
+                        ›
+                    </div>
+
+                </div>
+
+                <div class="emergency-action-content">
+
+                    <h3 data-i18n="call911">
+                        Call 911
+                    </h3>
+
+                    <p data-i18n="call911Text">
+                        Immediate emergency medical response
+                        for overdose situations or
+                        life-threatening emergencies.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a
+                href="sms:988"
+                class="emergency-action emergency-text"
+            >
+
+                <div class="emergency-action-top">
+
+                    <div class="emergency-action-icon">
+                        ✉
+                    </div>
+
+                    <div class="emergency-action-arrow">
+                        ›
+                    </div>
+
+                </div>
+
+                <div class="emergency-action-content">
+
+                    <h3 data-i18n="text988">
+                        Text 988
+                    </h3>
+
+                    <p data-i18n="text988Text">
+                        Confidential crisis support
+                        available by text message 24/7.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a
+                href="tel:988"
+                class="emergency-action emergency-crisis"
+            >
+
+                <div class="emergency-action-top">
+
+                    <div class="emergency-action-icon">
+                        ☎
+                    </div>
+
+                    <div class="emergency-action-arrow">
+                        ›
+                    </div>
+
+                </div>
+
+                <div class="emergency-action-content">
+
+                    <h3 data-i18n="call988">
+                        Call 988
+                    </h3>
+
+                    <p data-i18n="call988Text">
+                        Suicide & Crisis Lifeline
+                        for emotional support
+                        and mental health emergencies.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <button
+                class="lightshow-btn"
+                data-lightshow="recovery"
+                data-i18n="openLightShow"
+            >
+                ✨ Open Image Light Show
+            </button>
+
+            <div class="emergency-steps">
+
+                <h3 data-i18n="overdoseResponseSteps">
+                    Overdose Response Steps
+                </h3>
+
+                <p>
+
+                    <span
+                        class="audio-icon"
+                        data-audio-id="sectionOverdoseSteps"
+                    >
+                        🔉
+                    </span>
+
+                </p>
+
+                <div class="step-grid">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div
+                            class="step-text"
+                            data-i18n="step1"
+                        >
+                            Call 911 immediately.
+                        </div>
+
+                    </div>
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div
+                            class="step-text"
+                            data-i18n="step2"
+                        >
+                            Administer naloxone if available.
+                        </div>
+
+                    </div>
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div
+                            class="step-text"
+                            data-i18n="step3"
+                        >
+                            Keep the person breathing and awake.
+                        </div>
+
+                    </div>
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div
+                            class="step-text"
+                            data-i18n="step4"
+                        >
+                            Stay until emergency responders arrive.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal"
+    id="treatmentModal"
+>
+
+    <div class="modal-box treatment-modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title-wrap">
+
+                <h2 data-i18n="treatmentFinderTitle">
+                    Rhode Island Treatment Finder
+                </h2>
+
+                <p data-i18n="treatmentFinderText">
+                    Search detox providers,
+                    recovery programs,
+                    medication assisted treatment,
+                    behavioral health services,
+                    and crisis support organizations.
+                </p>
+
+                <span
+                    class="audio-icon"
+                    data-audio-id="modalTreatment"
+                >
+                    🔉
+                </span>
+
+            </div>
+
+            <button
+                class="close-btn"
+                data-close-modal="treatmentModal"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div class="modal-body treatment-modal-body">
+
+            <div class="treatment-search-wrap">
+
+                <input
+                    type="text"
+                    id="treatmentSearch"
+                    class="treatment-search"
+                    data-i18n-placeholder="searchPlaceholder"
+                    placeholder="Search treatment, detox, city, recovery, provider..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <button
+                class="lightshow-btn"
+                data-lightshow="treatment"
+                data-i18n="openLightShow"
+            >
+                ✨ Open Image Light Show
+            </button>
+
+            <div class="treatment-scroll">
+
+                <div
+                    class="treatment-results"
+                    id="treatmentResults"
+                >
+
+                </div>
+
+                <div
+                    class="treatment-empty hidden"
+                    id="treatmentEmpty"
+                    data-i18n="noResults"
+                >
+                    No matching treatment providers found.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal"
+    id="infoModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title-wrap">
+
+                <h2 id="infoTitle">
+                    Information
+                </h2>
+
+                <p id="infoSubtitle">
+
+                    Information subtitle.
+
+                    <span
+                        class="audio-icon"
+                        data-audio-id="modalInfo"
+                    >
+                        🔉
+                    </span>
+
+                </p>
+
+            </div>
+
+            <button
+                class="close-btn"
+                data-close-modal="infoModal"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <button
+                class="lightshow-btn"
+                data-lightshow="recovery"
+            >
+                ✨ Open Image Light Show
+            </button>
+
+            <div class="info-modal-section">
+
+                <h3>
+                    Resources
+                </h3>
+
+                <p>
+
+                    <span
+                        class="audio-icon"
+                        data-audio-id="sectionResources"
+                    >
+                        🔉
+                    </span>
+
+                </p>
+
+                <ul id="infoList">
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="menu-sheet"
+    id="menuSheet"
+>
+
+    <div class="menu-header">
+
+        <div class="menu-title">
+            More Options
+        </div>
+
+        <button
+            class="menu-close"
+            id="closeMenuButton"
+        >
+            ✕
+        </button>
+
+    </div>
+
+    <div class="menu-grid">
+
+        <button class="menu-option">
+
+            <div class="menu-option-icon">
+                ☎
+            </div>
+
+            <div>
+
+                <div class="menu-option-title">
+                    Emergency Contacts
+                </div>
+
+                <div class="menu-option-text">
+                    Quick access to crisis and support services.
+                </div>
+
+            </div>
+
+        </button>
+
+        <button class="menu-option">
+
+            <div class="menu-option-icon">
+                ⌖
+            </div>
+
+            <div>
+
+                <div class="menu-option-title">
+                    Nearby Services
+                </div>
+
+                <div class="menu-option-text">
+                    Locate clinics,
+                    recovery centers,
+                    and outreach organizations.
+                </div>
+
+            </div>
+
+        </button>
+
+        <button class="menu-option">
+
+            <div class="menu-option-icon">
+                ⚑
+            </div>
+
+            <div>
+
+                <div class="menu-option-title">
+                    Report Information
+                </div>
+
+                <div class="menu-option-text">
+                    Submit community safety concerns
+                    and prevention feedback.
+                </div>
+
+            </div>
+
+        </button>
+
+        <button class="menu-option">
+
+            <div class="menu-option-icon">
+                ☰
+            </div>
+
+            <div>
+
+                <div class="menu-option-title">
+                    App Settings
+                </div>
+
+                <div class="menu-option-text">
+                    Accessibility and personalization controls.
+                </div>
+
+            </div>
+
+        </button>
+
+    </div>
+
+</div>
+
+<div
+    class="modal"
+    id="lightShowModal"
+>
+
+    <div class="modal-box lightshow-modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title-wrap">
+
+                <h2>
+                    Recovery Light Show
+                </h2>
+
+                <p>
+
+                    Interactive recovery image gallery.
+
+                    <span
+                        class="audio-icon"
+                        data-audio-id="modalLightshow"
+                    >
+                        🔉
+                    </span>
+
+                </p>
+
+            </div>
+
+            <button
+                class="close-btn"
+                data-close-modal="lightShowModal"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="lightshow-stage">
+
+                <img
+                    id="lightShowImage"
+                    class="lightshow-image"
+                    src=""
+                    alt="Recovery Light Show"
+                >
+
+            </div>
+
+            <div class="lightshow-controls">
+
+                <button
+                    class="treatment-btn"
+                    id="previousLightshow"
+                >
+                    ◀ Previous
+                </button>
+
+                <button
+                    class="treatment-btn treatment-btn-danger"
+                    id="nextLightshow"
+                >
+                    Next ▶
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div
+    class="modal"
+    id="languageModal"
+>
+
+    <div class="modal-box language-modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title-wrap">
+
+                <h2>
+                    Select Language
+                </h2>
+
+                <p>
+                    Choose your preferred language.
+                </p>
+
+            </div>
+
+            <button
+                class="close-btn"
+                data-close-modal="languageModal"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="language-grid">
+
+                <button class="language-option" data-language="en">
+                    🇺🇸 English
+                </button>
+
+                <button class="language-option" data-language="pt">
+                    🇵🇹 Português
+                </button>
+
+                <button class="language-option" data-language="es">
+                    🇪🇸 Español
+                </button>
+
+                <button class="language-option" data-language="fr">
+                    🇫🇷 Français
+                </button>
+
+                <button class="language-option" data-language="kea">
+                    🇨🇻 Kriolu
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="languages/en.js"></script>
+<script src="languages/pt.js"></script>
+<script src="languages/es.js"></script>
+<script src="languages/fr.js"></script>
+<script src="languages/kea.js"></script>
+
+<script src="data/cards.js"></script>
+<script src="data/info-content.js"></script>
+<script src="data/treatment-providers.js"></script>
+<script src="data/lightshow-images.js"></script>
+<script src="data/narrations.js"></script>
+
+<script>
+
+let deferredInstallPrompt = null;
+
+const installPill = document.getElementById('installPill');
+const installModal = document.getElementById('installModal');
+const closeInstallModal = document.getElementById('closeInstallModal');
+
+function isRunningStandalone() {
+
+    return window.matchMedia('(display-mode: standalone)').matches
+        || window.navigator.standalone === true;
+
+}
+
+function toggleInstallVisibility() {
+
+    if (isRunningStandalone()) {
+
+        installPill.style.display = 'none';
+
+    } else {
+
+        installPill.style.display = 'flex';
+
+    }
+
+}
+
+window.addEventListener('beforeinstallprompt', (event) => {
+
+    event.preventDefault();
+
+    deferredInstallPrompt = event;
+
+    toggleInstallVisibility();
+
+});
+
+window.addEventListener('appinstalled', () => {
+
+    installPill.style.display = 'none';
+
+    installModal.style.display = 'none';
+
+});
+
+window.addEventListener('load', () => {
+
+    setTimeout(() => {
+
+        toggleInstallVisibility();
+
+    }, 1000);
+
+});
+
+installPill.addEventListener('click', async () => {
+
+    installModal.style.display = 'flex';
+
+    if (deferredInstallPrompt) {
+
+        try {
+
+            await deferredInstallPrompt.prompt();
+
+            deferredInstallPrompt = null;
+
+        } catch (error) {
+
+            console.log(error);
+
+        }
+
+    }
+
+});
+
+closeInstallModal.addEventListener('click', () => {
+
+    installModal.style.display = 'none';
+
+});
+
+installModal.addEventListener('click', (event) => {
+
+    if (event.target === installModal) {
+
+        installModal.style.display = 'none';
+
+    }
+
+});
+
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

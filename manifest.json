@@ -1,0 +1,21 @@
+{
+  "name": "Prevent Overdose Rhode Island",
+  "short_name": "Prevent Overdose RI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#041b46",
+  "theme_color": "#041b46",
+  "description": "Harm reduction resources, overdose prevention tools, crisis support, recovery guidance, and emergency services.",
+  "icons": [
+    {
+      "src": "pori-dark-bg.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "pori-dark-bg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

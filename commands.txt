@@ -1,0 +1,583 @@
+Here are your resources the full prompt is at the bottom...
+
+===================
+Resources:
+===================
+
+
+
+===================
+PROMPT:
+===================
+
+We're going to do this now. 
+I'll be pasting full code for you to rewrite entirely to save time and preserve accuracy. 
+Await first pasting or instructions.
+
+Say "OK"..:
+
+
+
+
+===================
+IMPORTANT!
+===================
+
+Use english..
+
+We're going to do this now. 
+I'll be pasting full code for you to rewrite entirely to save time and preserve accuracy. 
+Await first pasting or instructions.
+
+Say "OK"..:
+
+
+
+
+
+
+
+===================
+PROMPT:
+===================
+
+Using Tinker (php artisan tinker --execute=""), write a monolithic block of several read-only commands (all on one line) to find out
+
+===================
+Console!
+===================
+
+# Clear logs and watch in real-time
+echo "" > storage/logs/laravel.log
+tail -f storage/logs/laravel.log
+
+
+
+=====================
+NOTE:
+=====================
+
+Put file(s) in copy able UI element with the copy and download buttons.
+
+
+
+=====================
+DEEP SEARCH PROMPT:
+=====================
+
+Run a comprehensive search to find and analyze all files related to ... . Use grep commands with recursive search, include file paths, show line numbers, and display context lines around matches. Then analyze the findings and provide a complete summary of what you discovered. Put all commands in one block! LIMIT ALL OUTPUTS TO 50 CHARACTERS!
+
+
+
+
+What can we move to /var/www/laravel/resources/js/components/feed from /var/www/laravel/resources/js/Pages/Feed.vue to decrease size?(Short list of 5, no major details)..:'
+Extract these five files please from UploadsCard so i can paste them into their files, please..:'
+
+
+# Check your existing models
+php artisan list models
+
+# Check your events and listeners
+php artisan event:list
+
+# Check your notifications
+ls app/Notifications/
+
+# Check your current Message model structure
+php artisan model:show Message
+
+# Check your User model relationships
+php artisan model:show User
+
+
+
+
+
+///////////////////
+APP AUDIT//////
+//////////
+
+php artisan route:list ; \
+php artisan route:list --columns=method,uri,action,middleware ; \
+php artisan middleware:list ; \
+php artisan queue:failed ; \
+php artisan config:show app ; \
+php artisan config:show cors ; \
+php artisan config:show session ; \
+php artisan config:show sanctum ; \
+php artisan config:show broadcasting ; \
+php artisan config:show cache ; \
+php artisan config:show queue ; \
+ls -R public | sed 's/^/public\//' ; \
+ls -R resources/js | sed 's/^/resources\/js\//' ; \
+ls -R resources/views | sed 's/^/resources\/views\//' ; \
+grep -R "Route::domain" -n routes ; \
+grep -R "subdomain" -n routes ; \
+grep -R "serviceWorker" -n resources/js public ; \
+grep -R "pushManager" -n resources/js public ; \
+grep -R "csrf" -n app/Http/Middleware ; \
+grep -R "Route::any" -n routes
+
+
+
+
+**INSTRUCTIONS — GENERATE A COMPLETE, ACCURATE COMMENT-LIKE SYSTEM THAT MATCHES MY EXISTING LIKE SYSTEM EXACTLY**
+
+You must generate ONE SINGLE OUTPUT BLOCK containing **every rewritten file** needed to implement comment likes across all content types.
+You must follow ALL rules below.
+You may not skip anything.
+You may not redesign anything.
+You may not output partial code.
+You must output the FULL, FINAL files.
+
+---
+
+# **1. USE MY REAL DATABASE STRUCTURE EXACTLY — NO CHANGES**
+
+The following tables ALREADY EXIST in MySQL.
+DO NOT create them.
+DO NOT rename them.
+DO NOT change fields.
+DO NOT add fields.
+
+### Comment-like tables (already exist):
+
+```
+comment_likes
+media_photo_comment_likes
+media_short_comment_likes
+repost_comment_likes
+```
+
+Each contains:
+
+```
+id, comment_id, user_id, created_at, updated_at
+```
+
+### Comment tables (already exist):
+
+```
+comments               (post_id)
+media_photo_comments   (photo_id)
+media_short_comments   (short_id)
+repost_comments        (repost_id)
+```
+
+### Normal like tables (what you must MATCH EXACTLY):
+
+```
+likes
+media_photo_likes
+media_short_likes
+repost_likes
+```
+
+You must **mirror their system** for comments.
+
+---
+
+# **2. DO NOT GENERATE CREATION MIGRATIONS**
+
+These tables already exist.
+
+ONLY generate migrations if needed to add:
+
+```
+unique(comment_id, user_id)
+```
+
+If not needed → DO NOT output any migrations at all.
+
+---
+
+# **3. YOU MUST GENERATE FOUR MODELS**
+
+Each model must:
+
+* Use correct table name
+* Use fillable: `['comment_id', 'user_id']`
+* Have `comment()` relationship
+* Have `user()` relationship
+* Match existing model naming conventions exactly
+
+Models required:
+
+```
+CommentLike
+MediaPhotoCommentLike
+MediaShortCommentLike
+RepostCommentLike
+```
+
+---
+
+# **4. YOU MUST GENERATE FOUR CONTROLLERS**
+
+They must follow the EXACT same pattern as my working Like controllers.
+
+Each controller must:
+
+* Validate the comment belongs to its parent content
+* Toggle like (delete if exists, create if missing)
+* Return JSON:
+
+```
+{
+  "liked": boolean,
+  "likes_count": integer,
+  "comment_id": integer
+}
+```
+
+Controllers required:
+
+```
+CommentLikeController
+MediaPhotoCommentLikeController
+MediaShortCommentLikeController
+RepostCommentLikeController
+```
+
+Each must use proper route model binding:
+
+* Post + Comment
+* MediaPhoto + MediaPhotoComment
+* MediaShort + MediaShortComment
+* Repost + RepostComment
+
+---
+
+# **5. YOU MUST UPDATE COMMENT MODELS**
+
+Add:
+
+```
+public function likes()
+{
+    return $this->hasMany(CorrectLikeModel::class, 'comment_id');
+}
+```
+
+Apply to:
+
+```
+Comment
+MediaPhotoComment
+MediaShortComment
+RepostComment
+```
+
+---
+
+# **6. YOU MUST GENERATE ROUTES (api.php)**
+
+Add under `auth:sanctum` group:
+
+```
+POST /posts/{post}/comments/{comment}/like
+POST /photos/{photo}/comments/{comment}/like
+POST /shorts/{short}/comments/{comment}/like
+POST /reposts/{repost}/comments/{comment}/like
+```
+
+Map correctly to the controllers listed above.
+
+---
+
+# **7. YOU MUST UPDATE useSocialActions.js**
+
+You must add:
+
+```
+likeComment(comment, contentType)
+```
+
+This method must:
+
+1. Build correct endpoint depending on content type
+2. Endpoint must use parent ID:
+
+```
+comment.post_id
+comment.photo_id
+comment.short_id
+comment.repost_id
+```
+
+3. Perform POST request using axios
+4. Update:
+
+```
+comment.liked
+comment.likes_count
+```
+
+5. Throw no errors.
+6. Must NOT break `likeItem()` or anything else.
+
+---
+
+# **8. YOU MUST UPDATE UploadsCard.vue**
+
+Inside the comment loop:
+
+* Add a Like button per comment
+* The button must:
+
+```
+@click="likeComment(c)"
+```
+
+* It must call useSocialActions.likeComment(c, item.type)
+* It must display formatted count using formatCount()
+
+You must output the full updated snippet.
+
+---
+
+# **9. EVERYTHING MUST BE RETURNED AS ONE BLOCK**
+
+You must output ALL of the following in **ONE SINGLE BLOCK**:
+
+* All 4 models
+* All 4 controllers
+* All 4 updated comment models
+* The exact route additions
+* Updated useSocialActions.js (full file or full function)
+* Updated UploadsCard.vue (only the comment section + script setup changes)
+* Optional unique-index migrations (ONLY if needed)
+
+NO commentary.
+NO analysis.
+Code only.
+Everything complete.
+Nothing missing.
+
+---
+
+# **10. THIS IMPLEMENTATION MUST BE 100% COMPATIBLE**
+
+You must verify:
+
+* The foreign keys match my tables
+* Parent IDs exist (post_id, photo_id, short_id, repost_id)
+* Route model binding is valid
+* axios calls match actual routes
+* Vue methods exist and integrate correctly
+* No function names break existing code
+
+---
+
+
+
+
+
+
+
+
+
+
+# COMPREHENSIVE SYSTEM INVESTIGATION
+
+I'm facing a critical issue with [BRIEFLY DESCRIBE PROBLEM]. I need a thorough investigation across the entire system:
+
+## SEARCH OPERATION
+Create a file that executes a multi-pass search strategy:
+- Pass 1: Find ALL files containing error messages, stack traces, or exception patterns related to this issue
+- Pass 2: Find ALL configuration files that could influence this behavior  
+- Pass 3: Find ALL recent changes (git/logs) that might have introduced the problem
+- Pass 4: Find ALL dependencies, imports, or connections related to the failing components
+
+Use grep with: recursive search, file paths, line numbers, 5 lines context before/after, case-insensitive matching, and exclude common dependency directories. Put ALL search commands in one executable block.
+
+## DEEP ANALYSIS
+After gathering results, provide:
+1. Root cause hypothesis with confidence level
+2. Timeline correlation between changes and issue onset
+3. Component interaction map showing failure points
+4. Data flow tracing through the system
+5. Configuration drift detection
+6. Memory/resource patterns if relevant
+
+## DIAGNOSTIC EXECUTION
+Using appropriate tools for this stack (), construct a one-line command block that executes read-only diagnostic commands to examine:
+- Current system state
+- Runtime values at failure points  
+- Connection/communication status
+- Resource utilization
+
+## RECOMMENDATIONS
+Based on findings, provide:
+- Immediate mitigation steps
+- Permanent fix approach
+- Monitoring additions to prevent recurrence
+- Tests that should have caught this
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I want to make sure we know EVERYTHING..
+
+## SEARCH OPERATION
+
+Create a file that executes a multi-pass search strategy:
+
+- Pass 1: Find ALL files containing error messages, stack traces, or exception patterns related to this issue
+- Pass 2: Find ALL configuration files that could influence this behavior  
+- Pass 3: Find ALL recent changes (git/logs) that might have introduced the problem
+- Pass 4: Find ALL dependencies, imports, or connections related to the failing components
+
+Use grep with: recursive search, file paths, line numbers, 5 lines context before/after, case-insensitive matching, and exclude common dependency directories. Put ALL search commands in one executable block.
+
+## DEEP ANALYSIS
+After gathering results, provide:
+1. Root cause hypothesis with confidence level
+2. Timeline correlation between changes and issue onset
+3. Component interaction map showing failure points
+4. Data flow tracing through the system
+5. Configuration drift detection
+6. Memory/resource patterns if relevant
+
+## DIAGNOSTIC EXECUTION
+Using appropriate tools for this stack (), construct a one-line command block that executes read-only diagnostic commands to examine:
+- Current system state
+- Runtime values at failure points  
+- Connection/communication status
+- Resource utilization
+
+## RECOMMENDATIONS
+Based on findings, provide:
+- Immediate mitigation steps
+- Permanent fix approach
+- Monitoring additions to prevent recurrence
+- Tests that should have caught this
+P.environment
+
+Allow for minimal terminal output but save file and the extensive output to a file in /var/www/laravel
+
+Create and execute all in One block.(cat > << 'EOF')
+
+
+
+
+Confirm the update is needed, and if so, overwrite the file in the terminal by completely rewriting it using a single command like `cat > <filename> << 'EOF'\n[new file contents]\nEOF`.
+
+Overwrite the file in the terminal by completely rewriting it using a single command like `cat > <filename> << 'EOF'\n[new file contents]\nEOF`.
+
+
+
+
+Create and execute each file all in their own block.(cat > << 'EOF')
+
+=====================
+NOTE:
+=====================
+
+Put file(s) in copy able UI element with the copy and download buttons.
+
+
+
+
+
+Update all files completely.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Here's a generic, reusable prompt template for situations where you need an AI to start from absolute zero and diagnose a system failure without any prior assumptions:
+
+---
+
+**Generic Diagnostic Prompt (Zero Prior Knowledge, Frustration-Proof)**
+
+You have access to a system that is not working as expected. You know nothing about this system — no architecture, no configuration, no history, no assumptions. Your only goal is to perform a complete, read-only diagnostic to determine why the failure is occurring.
+
+You will discover everything yourself.** Do not assume anything. If you need information that cannot be obtained through read‑only commands or available logs, state exactly what is missing and why.
+
+Follow this process strictly:
+
+**1. Environment reconnaissance**  
+- Identify the operating system, runtime versions (PHP, Node, Python, etc.), and key installed packages.  
+- Locate environment configuration files (e.g., `.env`, `config.yml`, `settings.py`).  
+- Determine what services are running (database, cache, queue, websocket, etc.).
+
+**2. Locate the failing feature**  
+- Search the codebase for files related to the feature's name or reported error messages.  
+- Find the entry point (UI component, API endpoint, CLI command, etc.) that triggers the failure.  
+- Trace the execution path from input to output.
+
+**3. Configuration and runtime state**  
+- Check all relevant configuration values (environment variables, config files, database settings).  
+- Examine logs for errors, warnings, or stack traces related to the failure.  
+- Verify connectivity to external services (APIs, databases, third-party providers).
+
+**4. Data flow tracing**  
+- Map the complete path of a single request/action from initiation to expected response.  
+- Identify every point where the process could fail silently, return null, or throw an unhandled exception.
+
+**5. Live diagnostics (read-only)**  
+- Suggest commands to test the failing component directly (e.g., `curl`, `tinker`, REPL).  
+- Check resource utilization (CPU, memory, disk, network).  
+- Verify that all required background processes are running.
+
+**6. Report your findings**  
+Provide:  
+- **Root cause hypothesis** with confidence level.  
+- **Evidence** from your search and diagnostics.  
+- **Component interaction map** showing the exact failure point(s).  
+- **Immediate mitigation steps** and **permanent fix**.  
+- **Monitoring and tests** to prevent recurrence.
+
+If you cannot determine the root cause without additional information, explicitly list:  
+- What information is missing.  
+- How to obtain it (commands, files, access).  
+- Why it is necessary.
+
+**Do not assume anything. Do not hallucinate. If you don't know, state that you don't know and what you need to find out.**
+
+Create and execute all in One block.(cat > << 'EOF')
+
+No simulating.
+
+No comments.
+
+
+
+
+**You will discover everything yourself.** Do not assume anything. If you need information that cannot be obtained through read‑only commands or available logs, state exactly what is missing and why.
+**Do not assume anything. Do not hallucinate. If you don't know, state that you don't know and what you need to find out.**
+
+Create and execute all in One block.(cat > << 'EOF')
+
+No simulating.
+
+No comments.
