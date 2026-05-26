@@ -1,7 +1,7 @@
 {
   "name": "Prevent Overdose Rhode Island",
   "short_name": "Prevent Overdose RI",
-  "start_url": "/",
+  "start_url": "https://somoscv.github.io/PO-RI/",
   "display": "standalone",
   "background_color": "#041b46",
   "theme_color": "#041b46",
