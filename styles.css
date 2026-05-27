@@ -86,6 +86,17 @@ body{
     position:relative;
     display:flex;
     overflow:hidden;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 button,
