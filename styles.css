@@ -1010,6 +1010,7 @@ body.light-mode .treatment-empty{
 
     h2{
         font:0.5em sans-serif;
+        margin-bottom: 12px;
     }
 
     .icon{
@@ -1342,19 +1343,20 @@ body.light-mode .treatment-empty{
         padding-bottom:48px;
     }
 
+    .card h2{
+    font: size 1.25em;;
+        margin:0;
+    }
+
     .card-content p{
     font-size:0;
-    line-height:0;
+    line-height:5;
     margin:0;
 }
 
-.card-content h2{
-    margin-bottom:10px;
-}
-
-.audio-icon{
+    .audio-icon{
         cursor:pointer;
-        font-size:1.1rem;
+        font-size:1.8rem;
         margin-left:6px;
         user-select:none;
         display:inline;
