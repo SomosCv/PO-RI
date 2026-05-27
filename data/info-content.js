@@ -117,7 +117,7 @@ window.INFO_CONTENT = {
                         pack?.telephoneRecoveryText || "Telephone recovery support and peer recovery specialists available every day.",
                         {
                             type: 'link',
-                            label: pack?.telephoneRecoveryPhone || "☎ 401-414-LINK (5645)",
+                            label: pack?.telephoneRecoveryPhone || "401-414-LINK (5645)",
                             href: 'tel:4014145645'
                         },
                         {
