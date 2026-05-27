@@ -699,7 +699,7 @@ p{
 
     opacity:0;
     visibility:hidden;
-
+    max-height:80dvh;
     transition:.22s ease;
 }
 
@@ -1042,7 +1042,7 @@ body.light-mode .treatment-empty{
     .modal-box{
         padding:20px;
         border-radius:24px;
-        max-height:calc(100dvh - 20px);
+        max-height:calc(90dvh - 20px);
     }
 
     .step-grid{
@@ -1128,7 +1128,7 @@ body.light-mode .treatment-empty{
     min-height:720px;
     border-radius:28px;
     overflow:hidden;
-    background:#000;
+    background:#00000000;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1282,7 +1282,7 @@ body.light-mode .treatment-empty{
         font-size:14px;
     }
       .modal-box{
-        max-height:88dvh;
+        max-height:80dvh;
         padding:16px;
         border-radius:20px;
     }
