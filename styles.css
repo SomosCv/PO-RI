@@ -1280,6 +1280,16 @@ body.light-mode .treatment-empty{
         min-height:54px;
         font-size:14px;
     }
+      .modal-box{
+        max-height:88dvh;
+        padding:16px;
+        border-radius:20px;
+    }
+
+    .modal-body{
+        padding-right:0;
+    }
+
 
 }
 .audio-icon{
