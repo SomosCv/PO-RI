@@ -1323,18 +1323,36 @@ body.light-mode .treatment-empty{
 
 @media(max-width:768px){
 
-    .card-content p{
-        font-size:0;
-        line-height:0;
+    .card{
+        position:relative;
+        padding-bottom:48px;
     }
 
-    .card-content p .audio-icon{
-        font-size:1.1rem;
-        line-height:1;
-        display:inline-flex;
+    .card-content p{
+        display:none;
+    }
+
+    .audio-icon{
+        position:absolute;
+        right:14px;
+        bottom:14px;
+
+        display:flex;
         align-items:center;
         justify-content:center;
-        margin-left:0;
+
+        width:34px;
+        height:34px;
+
+        font-size:1rem;
+        line-height:1;
+
+        border-radius:50%;
+
+        background:rgba(255,255,255,.12);
+        backdrop-filter:blur(8px);
+
+        z-index:5;
     }
 
 }
