@@ -1025,6 +1025,10 @@ body.light-mode .treatment-empty{
         gap:10px;
     }
 
+    .hero p{
+        display:none;
+    }
+
     .card{
         border-radius:18px;
         padding:14px;
@@ -1353,6 +1357,25 @@ body.light-mode .treatment-empty{
         backdrop-filter:blur(8px);
 
         z-index:5;
+    }
+
+    .footer{
+        min-height:64px;
+        border-radius:18px;
+    }
+
+    .footer-item{
+        padding:8px 4px;
+        gap:4px;
+    }
+
+    .footer-icon{
+        font-size:18px;
+    }
+
+    .footer-label{
+        font-size:10px;
+        line-height:1;
     }
 
 }
