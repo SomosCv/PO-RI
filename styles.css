@@ -1357,6 +1357,17 @@ body.light-mode .treatment-empty{
     .audio-icon{
         cursor:pointer;
         font-size:1.8rem;
+        margin-left:20px;
+        user-select:none;
+        display:inline;
+        transition:opacity 0.2s;
+        opacity:0.9;
+        vertical-align:middle;
+    }
+
+        .card .audio-icon{
+        cursor:pointer;
+        font-size:1.8rem;
         margin-left:70%;
         user-select:none;
         display:inline;
