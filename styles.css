@@ -1348,6 +1348,7 @@ body.light-mode .treatment-empty{
     .card h2{
         font-size:1.15rem;
         margin:0;
+        margin-bottom:20px;
     }
 
     .card-content p{
