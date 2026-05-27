@@ -1319,3 +1319,22 @@ body.light-mode .treatment-empty{
     transform:translateY(-2px);
     background:rgba(255,255,255,.14);
 }
+
+
+@media(max-width:768px){
+
+    .card-content p{
+        font-size:0;
+        line-height:0;
+    }
+
+    .card-content p .audio-icon{
+        font-size:1.1rem;
+        line-height:1;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        margin-left:0;
+    }
+
+}
