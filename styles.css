@@ -1002,6 +1002,24 @@ body.light-mode .treatment-empty{
 }
 
 @media (max-width:640px){
+.modal-title-wrap p{
+    display: none;
+}
+     .card p,
+    .info-card p,
+    .service-card p,
+    .feature-card p,
+    .resource-card p,
+    .glass-card p,
+    .support-card p,
+    .dashboard-card p,
+    .stat-card p,
+    .action-card p,
+    .tool-card p,
+    .module-card p,
+    .content-card p {
+        display: none !important;
+    }
 
     .app{
         padding:10px;
