@@ -1398,6 +1398,8 @@ body.light-mode .treatment-empty{
     .card .audio-icon{
 
         margin-left:85%;
+        bottom:8px;
+        position:absolute;
     }
 
     .footer{
