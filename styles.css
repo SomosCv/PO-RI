@@ -5,7 +5,6 @@
 }
 
 :root{
-
     --font-xs:calc(12px * var(--text-scale));
     --font-sm:calc(14px * var(--text-scale));
     --font-md:calc(16px * var(--text-scale));
@@ -344,6 +343,9 @@ body.light-mode .card:nth-child(6){
 }
 
 .footer-item{
+    min-height:64px;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
     position:relative;
 
     padding:14px 10px;
@@ -1349,7 +1351,7 @@ body.light-mode .treatment-empty{
     background:rgba(255,255,255,.08);
     border:1px solid var(--border);
     text-align:left;
-    font-size:calc(1rem * var(--text-scale));
+    font-size:1rem;
     font-weight:700;
     transition:.2s ease;
 }
@@ -1471,7 +1473,7 @@ body.light-mode .treatment-empty{
 
 
 /* =========================================================
-   ACCESSIBILITY + TYPOGRAPHY POLISH
+   ACCESSIBILITY + MOBILE POLISH
 ========================================================= */
 
 body{
@@ -1481,59 +1483,31 @@ body{
 
 .card,
 .footer-item,
-.modal,
 button,
 input,
-select,
-textarea{
+textarea,
+select{
     transition:
         background .25s ease,
         color .25s ease,
         border-color .25s ease,
-        transform .2s ease,
         font-size .2s ease;
 }
 
 .card-content h1,
 .card-content h2,
-.card-content h3,
-.hero h1,
-.hero h2,
-.hero h3{
+.card-content h3{
     line-height:1.08;
     letter-spacing:-0.03em;
 }
 
 .card-content p,
-.modal p,
-.hero p,
 .footer-label{
     line-height:1.5;
 }
 
 .footer-label{
     font-size:calc(.82rem * var(--text-scale));
-}
-
-.card-content h2,
-.card h2{
-    word-break:break-word;
-}
-
-@media (max-width:768px){
-
-    .card{
-        min-height:180px;
-    }
-
-    .card-content{
-        gap:10px;
-    }
-
-    .card-content p{
-        opacity:.92;
-    }
-
 }
 
 @media (prefers-reduced-motion:reduce){
