@@ -6,6 +6,13 @@
 
 :root{
 
+    --font-xs:calc(12px * var(--text-scale));
+    --font-sm:calc(14px * var(--text-scale));
+    --font-md:calc(16px * var(--text-scale));
+    --font-lg:calc(20px * var(--text-scale));
+    --font-xl:calc(28px * var(--text-scale));
+
+
     --gap:clamp(10px,1.2vw,18px);
 
     --radius:24px;
@@ -181,7 +188,7 @@ a{
 }
 
 .hero h1{
-    font-size:clamp(32px,5vw,74px);
+    font-size:calc(clamp(32px,5vw,74px) * var(--text-scale));
 
     line-height:1;
 
@@ -308,7 +315,7 @@ body.light-mode .card:nth-child(6){
 }
 
 .card-content h2{
-    font-size:clamp(18px,1.8vw,34px);
+    font-size:calc(clamp(18px,1.8vw,34px) * var(--text-scale));
 
     line-height:1;
 
@@ -882,7 +889,7 @@ body.light-mode .treatment-card{
 }
 
 .treatment-card h2{
-    font-size:1.15rem;
+    font-size:calc(1.15rem * var(--text-scale));
     line-height:1.4;
     margin-bottom:10px;
 }
@@ -1342,7 +1349,7 @@ body.light-mode .treatment-empty{
     background:rgba(255,255,255,.08);
     border:1px solid var(--border);
     text-align:left;
-    font-size:1rem;
+    font-size:calc(1rem * var(--text-scale));
     font-weight:700;
     transition:.2s ease;
 }
@@ -1361,7 +1368,7 @@ body.light-mode .treatment-empty{
     }
 
     .card h2{
-        font-size:1.15rem;
+        font-size:calc(1.15rem * var(--text-scale));
         margin:0;
         margin-bottom:20px;
     }
@@ -1460,4 +1467,81 @@ body.light-mode .treatment-empty{
 .close-btn:hover{
     background:rgba(255,255,255,.12);
     transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY + TYPOGRAPHY POLISH
+========================================================= */
+
+body{
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+}
+
+.card,
+.footer-item,
+.modal,
+button,
+input,
+select,
+textarea{
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .2s ease,
+        font-size .2s ease;
+}
+
+.card-content h1,
+.card-content h2,
+.card-content h3,
+.hero h1,
+.hero h2,
+.hero h3{
+    line-height:1.08;
+    letter-spacing:-0.03em;
+}
+
+.card-content p,
+.modal p,
+.hero p,
+.footer-label{
+    line-height:1.5;
+}
+
+.footer-label{
+    font-size:calc(.82rem * var(--text-scale));
+}
+
+.card-content h2,
+.card h2{
+    word-break:break-word;
+}
+
+@media (max-width:768px){
+
+    .card{
+        min-height:180px;
+    }
+
+    .card-content{
+        gap:10px;
+    }
+
+    .card-content p{
+        opacity:.92;
+    }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
+    }
+
 }
