@@ -289,9 +289,7 @@ function renderCards(){
 
                     <div class="card-top">
 
-                        <div class="icon">
-                            ${card.icon}
-                        </div>
+                        <div class="icon">${card.icon}</div>
 
                         <div class="arrow">
                             ›
