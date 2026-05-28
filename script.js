@@ -501,7 +501,9 @@ function handleGlobalClick(e){
 
     }
 
-    if(e.target.id === 'themeButton'){
+    const themeButton = e.target.closest('#themeButton');
+
+    if(themeButton){
 
         toggleTheme();
 
@@ -509,7 +511,9 @@ function handleGlobalClick(e){
 
     }
 
-    if(e.target.id === 'fontButton'){
+    const fontButton = e.target.closest('#fontButton');
+
+    if(fontButton){
 
         toggleFontSize();
 
@@ -517,7 +521,9 @@ function handleGlobalClick(e){
 
     }
 
-    if(e.target.id === 'menuButton'){
+    const menuButton = e.target.closest('#menuButton');
+
+    if(menuButton){
 
         openMenuSheet();
 
