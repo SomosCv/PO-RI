@@ -7,7 +7,7 @@ function getCards() {
         {
             id: 'emergency',
             type: 'emergency',
-            icon: '✚',
+            icon: '<i class="fa-solid fa-truck-medical"></i>',
             title: window.LANGUAGE_PACKS[lang].cardEmergency,
             description: window.LANGUAGE_PACKS[lang].cardEmergencyText,
             audioId: 'cardEmergency'
@@ -16,7 +16,7 @@ function getCards() {
         {
             id: 'treatment',
             type: 'treatment',
-            icon: '▼',
+            icon: '<i class="fa-solid fa-location-crosshairs"></i>',
             title: window.LANGUAGE_PACKS[lang].cardTreatment,
             description: window.LANGUAGE_PACKS[lang].cardTreatmentText,
             audioId: 'cardTreatment'
@@ -25,7 +25,7 @@ function getCards() {
         {
             id: 'recovery',
             type: 'info',
-            icon: '✦',
+            icon: '<i class="fa-solid fa-hands-holding-circle"></i>',
             title: window.LANGUAGE_PACKS[lang].cardRecovery,
             description: window.LANGUAGE_PACKS[lang].cardRecoveryText,
             audioId: 'cardRecovery',
@@ -35,7 +35,7 @@ function getCards() {
         {
             id: 'addiction',
             type: 'info',
-            icon: '◎',
+            icon: '<i class="fa-solid fa-brain"></i>',
             title: window.LANGUAGE_PACKS[lang].cardAddiction,
             description: window.LANGUAGE_PACKS[lang].cardAddictionText,
             audioId: 'cardAddiction',
@@ -45,7 +45,7 @@ function getCards() {
         {
             id: 'overdose',
             type: 'info',
-            icon: '⬣',
+            icon: '<i class="fa-solid fa-shield-heart"></i>',
             title: window.LANGUAGE_PACKS[lang].cardOverdose,
             description: window.LANGUAGE_PACKS[lang].cardOverdoseText,
             audioId: 'cardOverdose',
@@ -55,7 +55,7 @@ function getCards() {
         {
             id: 'perinatal',
             type: 'info',
-            icon: '◈',
+            icon: '<i class="fa-solid fa-person-pregnant"></i>',
             title: window.LANGUAGE_PACKS[lang].cardPerinatal,
             description: window.LANGUAGE_PACKS[lang].cardPerinatalText,
             audioId: 'cardPerinatal',
