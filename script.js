@@ -311,7 +311,7 @@ function renderCards(){
                                 class="audio-icon"
                                 data-audio-id="${card.audioId}"
                             >
-                                🔉
+                                <i class="fa-solid fa-volume-high"></i>
                             </span>
 
                         </p>
@@ -620,7 +620,7 @@ function openInfoModal(content){
             class="audio-icon"
             data-audio-id="modalInfo"
         >
-            🔉
+            <i class="fa-solid fa-volume-high"></i>
         </span>
     `;
 
