@@ -1046,6 +1046,11 @@ body.light-mode .treatment-empty{
         width:auto;
     }
 
+    audio-icon{
+        font-size:18px;
+        margin-left: 70%;
+    }
+
     .grid{
         gap:10px;
     }
