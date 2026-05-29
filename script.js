@@ -882,6 +882,8 @@ function openLightShow(galleryId){
     currentLightshowId =
         galleryId || 'recovery';
 
+    window.LIGHTSHOW_IMAGES = window.getLightshowImages ? window.getLightshowImages() : window.LIGHTSHOW_IMAGES;
+
     currentGallery =
         window.LIGHTSHOW_IMAGES[currentLightshowId] || [];
 
@@ -1008,3 +1010,27 @@ function handleAudioIconClick(e){
     playAudio(audioId);
 
 }
+
+window.addEventListener("orientationchange", function(){
+
+    if(!lightShowModal.classList.contains("active")) return;
+
+    window.LIGHTSHOW_IMAGES = window.getLightshowImages ? window.getLightshowImages() : window.LIGHTSHOW_IMAGES;
+
+    currentGallery = window.LIGHTSHOW_IMAGES[currentLightshowId] || [];
+
+    updateLightShowImage();
+
+});
+
+window.addEventListener("resize", function(){
+
+    if(!lightShowModal.classList.contains("active")) return;
+
+    window.LIGHTSHOW_IMAGES = window.getLightshowImages ? window.getLightshowImages() : window.LIGHTSHOW_IMAGES;
+
+    currentGallery = window.LIGHTSHOW_IMAGES[currentLightshowId] || [];
+
+    updateLightShowImage();
+
+});
