@@ -8,9 +8,12 @@ function getLightshowFolder(){
 function buildGallery(){
     const folder = getLightshowFolder();
     return {
-        recovery:[`${folder}/1.png`,`${folder}/2.png`,`${folder}/3.png`],
-        overdose:[`${folder}/4.png`,`${folder}/5.png`],
-        treatment:[`${folder}/6.png`,`${folder}/7.png`]
+        emergency:[`${folder}/emergency.png`],
+        treatment:[`${folder}/treatment.png`],
+        recovery:[`${folder}/recovery.png`],
+        addiction:[`${folder}/addiction.png`],
+        overdose:[`${folder}/overdose.png`],
+        perinatal:[`${folder}/perinatal.png`]
     };
 }
 
