@@ -537,18 +537,45 @@ function handleGlobalClick(e){
 
     }
 
-    if(e.target.id === 'nextLightshow'){
+    if(e.target.id === 'printLightshow'){
 
-        nextLightShow();
-
+        const img=document.getElementById('lightshowImage');
+        if(img && img.src){
+            const w=window.open('');
+            w.document.write('<img src="'+img.src+'" style="max-width:100%">');
+            w.document.close();
+            w.focus();
+            w.print();
+        }
         return;
 
     }
 
-    if(e.target.id === 'previousLightshow'){
+    if(e.target.id === 'shareLightshow'){
 
-        previousLightShow();
+        const img=document.getElementById('lightshowImage');
+        if(img && img.src){
+            if(navigator.share){
+                navigator.share({title:'Image',url:img.src}).catch(()=>{});
+            }else{
+                navigator.clipboard.writeText(img.src).catch(()=>{});
+            }
+        }
+        return;
 
+    }
+
+    if(e.target.id === 'downloadLightshow'){
+
+        const img=document.getElementById('lightshowImage');
+        if(img && img.src){
+            const a=document.createElement('a');
+            a.href=img.src;
+            a.download='image';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        }
         return;
 
     }
