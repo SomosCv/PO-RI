@@ -42,8 +42,8 @@ const lightShowModal =
 const languageModal =
     document.getElementById('languageModal');
 
-const menuSheet =
-    document.getElementById('menuSheet');
+const menuModal =
+    document.getElementById('menuModal');
 
 const infoTitle =
     document.getElementById('infoTitle');
@@ -529,14 +529,7 @@ function handleGlobalClick(e){
 
     }
 
-    if(e.target.id === 'closeMenuButton'){
-
-        closeMenuSheet();
-
-        return;
-
-    }
-
+    
     if(e.target.id === 'printLightshow'){
 
         const img=document.getElementById('lightshowImage');
@@ -796,7 +789,8 @@ function bindModalEvents(){
         treatmentModal,
         infoModal,
         lightShowModal,
-        languageModal
+        languageModal,
+        menuModal
     ]
     .forEach(function(modal){
 
@@ -873,13 +867,13 @@ function toggleFontSize(){
 
 function openMenuSheet(){
 
-    menuSheet.classList.add('active');
+    menuModal.classList.add('active');
 
 }
 
 function closeMenuSheet(){
 
-    menuSheet.classList.remove('active');
+    menuModal.classList.remove('active');
 
 }
 
@@ -892,7 +886,8 @@ function handleKeydown(e){
         treatmentModal,
         infoModal,
         lightShowModal,
-        languageModal
+        languageModal,
+        menuModal
     ]
     .forEach(function(modal){
 
